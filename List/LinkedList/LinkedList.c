@@ -165,7 +165,6 @@ int deleteNode(Head *pHead, unsigned int pos){
  *           index1/index2 --- index of nodes to be swaped
  */
 int swapElem(Head *pHead, Node *pNode1, Node *pNode2){
-    int len = getListLength(pHead);
     if ((pNode1 == NULL) || (pNode2 == NULL))
         return -1;
     if (pNode1 == pNode2)
