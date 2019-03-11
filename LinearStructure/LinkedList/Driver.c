@@ -23,16 +23,31 @@ int main(void){
 
     traverseList(pHead, printList);
     putchar('\n');
+    printf("End of list: %d\n\n", pHead->pEnd->item);
 
-    deleteNode(pHead, 5);
+    printf("Deleting Node 1...\n");
+    deleteNode(pHead, 1);
     traverseList(pHead, printList);
     putchar('\n');
 
     printf("ListLength: %d\n", getListLength(pHead));
+    printf("End of list: %d\n\n", pHead->pEnd->item);
 
+    printf("Deleting Node 9(Last)...\n");
+    deleteNode(pHead, 9);
+    traverseList(pHead, printList);
+    putchar('\n');
+
+    printf("ListLength: %d\n", getListLength(pHead));
+    printf("End of list: %d\n\n", pHead->pEnd->item);
+
+    printf("Sorting List...\n");
     sortList(pHead, cmp);
     traverseList(pHead, printList);
     putchar('\n');
+
+    printf("ListLength: %d\n", getListLength(pHead));
+    printf("End of list: %d\n\n", pHead->pEnd->item);
 
     return 0;
 }

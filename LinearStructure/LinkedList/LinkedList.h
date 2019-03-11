@@ -4,7 +4,7 @@
 
 /* Linked List
  * Node:[elemType ,next]
- * Head:[count ,next]
+ * Head:[count ,next, pEnd]
  * Head -> N1 -> N2 -> ... -> Nn -> NULL
  */
 
@@ -20,6 +20,7 @@ typedef struct Node{
 typedef struct Head{
     int count;
     struct Node *next;
+    struct Node *pEnd;
 } Head;
 
 Head *initList(void);

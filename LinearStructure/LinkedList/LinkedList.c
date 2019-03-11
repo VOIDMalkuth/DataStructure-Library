@@ -15,6 +15,7 @@ Head* initList(void){
     Head *p = (Head *)(malloc(sizeof(Head)));
     p->count = 0;
     p->next = NULL;
+    p->pEnd = NULL;
     return p;
 }
 
@@ -112,6 +113,10 @@ int insertNode(Head *pHead, Node *pNode, unsigned int pos){
     if(pos == 0){
         pNode->next = pHead->next;
         pHead->next = pNode;
+
+        if(getListLength(pHead) == pos)
+            (pHead->pEnd) = pNode;
+        
         (pHead->count)++;
         return 0;
     }
@@ -123,7 +128,12 @@ int insertNode(Head *pHead, Node *pNode, unsigned int pos){
 
     pNode->next = pCur->next;
     pCur->next = pNode;
+
+    if (pos == getListLength(pHead))
+        (pHead->pEnd) = pNode;
+
     (pHead->count)++;
+
     return 0;
 }
 
@@ -142,6 +152,10 @@ int deleteNode(Head *pHead, unsigned int pos){
     if(pos == 1){
         pHead->next = pCur->next;
         free(pCur);
+
+        if (pos == getListLength(pHead))
+            (pHead->pEnd) = NULL;
+
         (pHead->count)--;
         return 0;
     }
@@ -153,6 +167,10 @@ int deleteNode(Head *pHead, unsigned int pos){
     pCur = pCur->next;
     pPre->next = pCur->next;
     free(pCur);
+
+    if (pos == getListLength(pHead))
+        (pHead->pEnd) = pPre;
+
     (pHead->count)--;
     return 0;
 }
