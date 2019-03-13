@@ -6,7 +6,7 @@
 - clearStack
 - getStackLength
 - isStackEmpty
-- getTopElem
+- getElem
 - pushElem
 - popElem
 - getStackSize (Array Version Only)
