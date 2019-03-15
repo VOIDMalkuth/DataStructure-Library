@@ -1,5 +1,5 @@
 /* Author: Void-Malkuth
- * Date: 2019.
+ * Date: 2019.3.13
  */
 
 #include <stdio.h>
