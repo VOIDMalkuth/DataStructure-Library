@@ -7,7 +7,6 @@ typedef char elemType;
 typedef struct Stack{
     elemType *pSpace;
     int top;
-    int count;
     int size;
 } Stack;
 
@@ -32,7 +31,7 @@ void clearStack(Stack *pStack);
  * Argument: pointer to Stack.
  * Return Value: item count.
  */
-#define getStackLength(X) ((X)->count) 
+#define getStackLength(X) (((X)->top) + 1) 
 
 /* getStackSize: get current max size of the stack.
  * Argument: pointer to Stack.

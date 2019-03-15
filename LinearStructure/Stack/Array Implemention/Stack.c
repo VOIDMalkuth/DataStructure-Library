@@ -23,7 +23,6 @@ Stack *initStack(int maxSize){
 
     pStack->pSpace = pSpace;
     pStack->top = -1;
-    pStack->count = 0;
     pStack->size = maxSize;
 
     return pStack;
@@ -49,33 +48,8 @@ void freeStack(Stack **ppStack){
  */
 void clearStack(Stack *pStack){
     pStack->top = -1;
-    pStack->count = 0;
     return;
 }
-
-/* getStackLength: get current item count of the stack.
- * Argument: pointer to Stack.
- * Return Value: item count.
- */
-#define getStackLength(X) ((X)->count) 
-
-/* getStackSize: get current max size of the stack.
- * Argument: pointer to Stack.
- * Return Value: max size.
- */
-#define getStackSize(X) ((X)->size)
-
-/* isStackEmpty: check if the stack is empty.
- * Argument: pointer to Stack.
- * Return Value: 1 -- empty, 0 -- not empty.
- */
-#define isStackEmpty(X) ((getStackLength(X) == 0) ? 1:0)
-
-/* isStackFull: check if the stack is full.
- * Argument: pointer to Stack.
- * Return Value: 1 -- full, 0 -- not full.
- */
-#define isStackFull(X) ((getStackLength(X) == getStackSize(X)) ? 1:0)
 
 /* pushElem: push an element.
  * Argument: pStack -- pointer to stack,
@@ -87,7 +61,6 @@ int pushElem(Stack *pStack, elemType elem){
         return -1;
 
     (pStack->pSpace)[++(pStack->top)] = elem;
-    (pStack->count)++;
 
     return 0;
 }
@@ -115,7 +88,6 @@ int popElem(Stack *pStack, elemType *pItem){
     int status = getElem(pStack, pItem);
     if(!status){
         (pStack->top)--;
-        (pStack->count)--;
     }
 
 
