@@ -28,7 +28,7 @@ Stack *initStack(int maxSize){
     return pStack;
 }
 
-/* freeList: delete a List forever and set pStack to NULL.
+/* freeStack: delete a Stack forever and set pStack to NULL.
  * Argument: pointer to pStack.
  */
 void freeStack(Stack **ppStack){
@@ -89,7 +89,6 @@ int popElem(Stack *pStack, elemType *pItem){
     if(!status){
         (pStack->top)--;
     }
-
 
     return status;
 }
