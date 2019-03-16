@@ -29,7 +29,7 @@ Head* initList(void){
 void freeList(Head **ppHead){
     Head *pHead = *ppHead;
     Node *pNode = pHead->next;
-    if(pNode == NULL{
+    if(pNode == NULL){
         free(pHead);
         *ppHead = NULL;
 
