@@ -1,6 +1,8 @@
 /* Author: Void-Malkuth
  * Date: 2019.3.13
  */
+#include "LinkedList.h"
+
 typedef char elemType;
 
 typedef Head Stack;

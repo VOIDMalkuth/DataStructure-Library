@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "LinkedList.h"
 #include "Stack.h"
 
 /* initStack: Init a stack
