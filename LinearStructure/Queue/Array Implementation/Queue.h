@@ -16,3 +16,5 @@ int isQueueFull(Queue *pQueue);
 int enQueue(elemType item, Queue *pQueue);
 
 int deQueue(elemType *pItem, Queue *pQueue);
+
+void freeQueue(Queue **ppQueue);

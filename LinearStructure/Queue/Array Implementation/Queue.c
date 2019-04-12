@@ -37,3 +37,10 @@ int deQueue(elemType *pItem, Queue *pQueue){
         return 0;
     }
 }
+
+void freeQueue(Queue **ppQueue){
+    Queue *pQueue = *ppQueue;
+    free(pQueue->pSpace);
+    *ppQueue = NULL;
+    return;
+}

@@ -28,5 +28,7 @@ int main(void){
         printf("%c ", j);
     }
 
+    freeQueue(&pQueue);
+
     return 0;
 }
